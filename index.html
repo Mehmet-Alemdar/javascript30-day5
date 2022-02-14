@@ -35,5 +35,20 @@
       <p>Motion</p>
     </div>
   </div>
+
+  <script>
+    const panel = document.querySelectorAll('.panel')
+    
+    panel.forEach(element => element.addEventListener('click',() => {
+      element.classList.toggle('panel-open')
+      
+    }))
+
+    panel.forEach(element => element.addEventListener('transitionend',() => {
+      if(e.propertyName === 'flex-grow'){
+        element.classList.toggle('panel-active')
+      }
+    }))
+  </script>
 </body>
 </html>
