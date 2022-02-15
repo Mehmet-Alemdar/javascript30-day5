@@ -37,15 +37,15 @@
   </div>
 
   <script>
-    const panel = document.querySelectorAll('.panel')
-    
-    panel.forEach(element => element.addEventListener('click',() => {
+    const panels = document.querySelectorAll('.panel')
+
+    panels.forEach(element => element.addEventListener('click',() => {
       element.classList.toggle('panel-open')
       
     }))
 
-    panel.forEach(element => element.addEventListener('transitionend',() => {
-      if(e.propertyName === 'flex-grow'){
+    panels.forEach(element => element.addEventListener('transitionend',(e) => {
+      if(e.propertyName.includes('flex')){
         element.classList.toggle('panel-active')
       }
     }))
